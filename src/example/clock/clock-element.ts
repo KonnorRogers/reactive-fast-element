@@ -1,6 +1,6 @@
-import {FASTElement, html, customElement} from '@microsoft/fast-element';
+import {html, customElement} from '@microsoft/fast-element';
 import {ClockController} from './clock-controller.js';
-import {FASTReactiveMixin} from "fast-element-reactivity";
+import {ReactiveFASTElement} from "../../src";
 
 const template = html<ClockElement>`
   Current Time: ${x => x.formattedTime()}
@@ -10,7 +10,7 @@ const template = html<ClockElement>`
   name: 'clock-element',
   template,
 })
-export class ClockElement extends FASTReactiveMixin(FASTElement) {
+export class ClockElement extends ReactiveFASTElement {
   // Create the controller and store it
   private clock = new ClockController(this, 100);
 

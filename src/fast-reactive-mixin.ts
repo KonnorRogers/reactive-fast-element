@@ -11,7 +11,7 @@ type ReactiveConstructor<T = {}> = new (...args: any[]) => T;
  */
 export const FASTReactiveMixin = <T extends ReactiveConstructor<FASTElement>>(superClass: T) => {
   class ReactiveClass extends superClass {
-    __controllers?: Set<ReactiveController>
+    public __controllers?: Set<ReactiveController>
 
     constructor (..._args: any[]) {
       super()
@@ -29,17 +29,18 @@ export const FASTReactiveMixin = <T extends ReactiveConstructor<FASTElement>>(su
       this.__controllers?.forEach((c) => c?.hostDisconnected?.())
     }
 
+    attributeChangedCallback (attr: string, oldValue: any, newValue: any) {
+      super.attributeChangedCallback(attr, oldValue, newValue)
+      this.__controllers?.forEach((c) => c?.hostUpdated?.())
+    }
+
     // https://www.fast.design/docs/fast-element/defining-elements#the-element-lifecycle
     // Based on checking source, this doesnt exist yet.
     // adoptedCallback (): void {
     //   super.adoptedCallback()
     //   this.__controllers?.forEach((c) => c?.hostUpdated?.())
     // }
-    attributeChangedCallback (attr: string, oldValue: any, newValue: any) {
-      super.attributeChangedCallback(attr, oldValue, newValue)
-      this.__controllers?.forEach((c) => c?.hostUpdated?.())
-    }
   }
 
-  return ReactiveClass
+  return ReactiveClass as ReactiveConstructor<ReactiveElementInterface> & T;
 }

@@ -1,0 +1,1 @@
+{"version":3,"file":"fast-reactive-mixin.d.ts","sourceRoot":"","sources":["../src/fast-reactive-mixin.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,MAAM,yBAAyB,CAAA;AACrD,OAAO,EAAE,wBAAwB,EAAsB,MAAM,SAAS,CAAA;AAEtE,aAAK,mBAAmB,CAAC,CAAC,GAAG,EAAE,IAAI,KAAK,GAAG,IAAI,EAAE,GAAG,EAAE,KAAK,CAAC,CAAC;AAE7D;;;;;GAKG;AACH,eAAO,MAAM,iBAAiB,kHAkC7B,CAAA"}

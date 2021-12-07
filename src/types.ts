@@ -1,7 +1,7 @@
 import { FASTElement } from "@microsoft/fast-element"
 import { FASTReactiveControllerHostClass } from "./fast-reactive-controller-host"
 
-export interface ReactiveElementInterface extends FASTElement, ReactiveController {
+export interface ReactiveElementInterface extends FASTElement {
   host: FASTReactiveControllerHostClass
 }
 

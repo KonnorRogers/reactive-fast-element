@@ -1,4 +1,4 @@
 import { FASTElement } from "@microsoft/fast-element"
-import { ReactiveMixin } from "./reactive-mixin"
+import { FASTReactiveMixin } from "./fast-reactive-mixin"
 
-export class ReactiveFASTElement extends ReactiveMixin(FASTElement) {}
+export class ReactiveFASTElement extends FASTReactiveMixin(FASTElement) {}
