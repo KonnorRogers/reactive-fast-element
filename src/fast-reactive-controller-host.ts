@@ -8,12 +8,17 @@ export class FASTReactiveControllerHostClass {
     this.controllers = new Set<ReactiveFASTElement>()
   }
 
-  addController (controller: ReactiveFASTElement): void {
-    this.controllers.add(controller)
+  addController (element: ReactiveFASTElement): void {
+    this.controllers.add(element)
+    if (element.__controllers == null) element.__controllers = new Set<ReactiveFASTElement>()
+
+    element.__controllers
+    element.__controllers.add(element)
   }
 
-  removeController (controller: ReactiveFASTElement): void {
-    this.controllers.delete(controller)
+  removeController (element: ReactiveFASTElement): void {
+    this.controllers.delete(element)
+    if (element.__controllers != null) element.__controllers.delete(element)
   }
 
   requestUpdate (): void {
