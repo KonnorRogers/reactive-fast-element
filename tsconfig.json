@@ -1,29 +1,31 @@
 {
+
   "include": ["./src"],
   "exclude": ["./dist"],
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
     "declarationMap": true,
+    "declarationDir": "./types",
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
+    "importHelpers": true,
     "experimentalDecorators": true,
     "lib": ["es6", "dom", "dom.iterable"],
     "module": "ESNext",
     "moduleResolution": "node",
-    "emitDeclarationOnly": true,
     "outDir": "./dist",
     "sourceMap": true,
     "strict": true,
-    "target": "es2017",
+    "target": "es2018",
     "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
 
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": false,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-
-    "importHelpers": true
+    "noUnusedParameters": true
   }
 }

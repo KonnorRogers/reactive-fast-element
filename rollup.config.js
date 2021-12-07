@@ -11,14 +11,14 @@ export default [
     input: "src/index.ts",
     output: [
       {
-        name: "components",
-        file: "dist/components.umd.js",
+        name: "FASTElementReactiveController",
+        file: "dist/fast-element-reactive-controller.umd.js",
         format: "umd",
         sourcemap: true,
         exports: "named",
       },
       {
-        file: "dist/components.module.js",
+        file: "dist/fast-element-reactive-controller.module.js",
         format: "es",
         sourcemap: true,
       }
@@ -31,14 +31,14 @@ export default [
     input: "src/index.ts",
     output: [
       {
-        name: "components",
-        file: "dist/components.umd.min.js",
+        name: "FASTElementReactiveController",
+        file: "dist/fast-element-reactive-controller.umd.min.js",
         format: "umd",
         sourcemap: true,
         exports: "named"
       },
       {
-        file: "dist/components.module.min.js",
+        file: "dist/fast-element-reactive-controller.module.min.js",
         format: "es",
         sourcemap: true,
       }
