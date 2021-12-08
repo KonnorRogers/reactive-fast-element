@@ -29,9 +29,9 @@
     "changelog": "standard-changelog",
     "deploy": "pnpm run build && standard-version",
     "deploy:beta": "pnpm run build && standard-version --prerelease beta && pnpm run push",
-    "deploy:patch": "pnpm run build && standard-version --release-as patch && pnpm run push",
-    "deploy:minor": "pnpm run build && standard-version --release-as minor && pnpm run push",
-    "deploy:major": "pnpm run build && standard-version --release-as major && pnpm run push",
+    "deploy:patch": "pnpm run build && standard-version --release-as patch",
+    "deploy:minor": "pnpm run build && standard-version --release-as minor",
+    "deploy:major": "pnpm run build && standard-version --release-as major",
     "push": "git push --follow-tags origin main && pnpm publish"
   },
   "dependencies": {
