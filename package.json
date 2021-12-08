@@ -1,13 +1,14 @@
 {
-  "name": "fast-element-reactive-controller",
+  "name": "reactive-fast-element",
   "version": "0.0.1",
   "source": "src/index.ts",
-  "main": "./dist/fast-element-reactive-controller.js",
-  "module": "./dist/fast-element-reactive-controller.module.js",
-  "unpkg": "./dist/fast-element-reactive-controller.umd.js",
-  "types": "./dist/fast-element-reactive-controller.d.ts",
+  "main": "./dist/reactive-fast-element.js",
+  "module": "./dist/reactive-fast-element.module.js",
+  "unpkg": "./dist/reactive-fast-element.umd.js",
+  "types": "./dist/types/index.d.ts",
+  "typings": "./dist/types/index.d.ts",
   "exports": {
-    ".": "./dist/index.modern.js"
+    ".": "./dist/reactive-fast-element.module.js"
   },
   "type": "module",
   "license": "MIT",
