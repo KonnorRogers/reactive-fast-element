@@ -31,7 +31,7 @@
     "deploy:patch": "pnpm run deploy --release-as patch && pnpm run push",
     "deploy:minor": "pnpm run deploy --release-as minor && pnpm run push",
     "deploy:major": "pnpm run deploy --release-as major && pnpm run push",
-    "push": "git push --follow-tags origin main && pnpm run publish"
+    "push": "git push --follow-tags origin main && pnpm publish"
   },
   "dependencies": {
     "@microsoft/fast-element": "^1.6.2",
