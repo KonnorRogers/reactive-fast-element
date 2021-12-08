@@ -13,6 +13,6 @@ export class DualClockController implements ReactiveController {
     this.clock2 = new ClockController(host, delay2)
   }
 
-  get time1 () { return this.clock1.value }
-  get time2 () { return this.clock2.value }
+  get time1 (): Date { return this.clock1.value }
+  get time2 (): Date { return this.clock2.value }
 }

@@ -4,7 +4,7 @@ export class MouseController {
   host: ReactiveControllerHost
   pos = { x: 0, y: 0 }
 
-  _onMouseMove = ({ clientX, clientY }: MouseEvent) => {
+  _onMouseMove = ({ clientX, clientY }: MouseEvent): void => {
     this.pos = { x: clientX, y: clientY }
     this.host.requestUpdate()
   }
@@ -14,11 +14,11 @@ export class MouseController {
     host.addController(this)
   }
 
-  hostConnected () {
+  hostConnected (): void {
     window.addEventListener('mousemove', this._onMouseMove)
   }
 
-  hostDisconnected () {
+  hostDisconnected (): void {
     window.removeEventListener('mousemove', this._onMouseMove)
   }
 }
