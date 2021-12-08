@@ -1,6 +1,6 @@
-import {customElement, html} from '@microsoft/fast-element';
-import { ReactiveFASTElement } from '../../';
-import {MouseController} from './mouse-controller.js';
+import { customElement, html } from '@microsoft/fast-element'
+import { ReactiveFASTElement } from '../../'
+import { MouseController } from './mouse-controller.js'
 
 const template = html<MouseElement>`
   <h3>The mouse is at:</h3>
@@ -14,13 +14,13 @@ const template = html<MouseElement>`
   template
 })
 export class MouseElement extends ReactiveFASTElement {
-  private mouse = new MouseController(this);
+  private readonly mouse: MouseController = new MouseController(this)
 
-  get posX () {
+  get posX (): number {
     return this.mouse.pos.x
   }
 
-  get posY () {
+  get posY (): number {
     return this.mouse.pos.y
   }
 }

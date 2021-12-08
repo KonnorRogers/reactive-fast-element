@@ -1,5 +1,5 @@
-import { FASTElement, DOM } from "@microsoft/fast-element"
-import { Constructor, ReactiveController, ReactiveControllerHost } from "./types"
+import { FASTElement, DOM } from '@microsoft/fast-element'
+import { Constructor, ReactiveController, ReactiveControllerHost } from './types'
 
 /**
  * https://lit.dev/docs/composition/mixins/
@@ -8,7 +8,7 @@ import { Constructor, ReactiveController, ReactiveControllerHost } from "./types
  * Hooks into fast element to provide a Reactive Lifecycle for compatibility with
  *   ReactiveControllers
  */
-export const FASTReactiveMixin = <T extends Constructor<FASTElement>>(superClass: T) => {
+export const FASTReactiveMixin = <T extends Constructor<FASTElement>>(superClass: T): T & Constructor<ReactiveControllerHost> => {
   class ReactiveClass extends superClass implements ReactiveControllerHost {
     __controllers__?: Set<ReactiveController>
 
@@ -32,7 +32,7 @@ export const FASTReactiveMixin = <T extends Constructor<FASTElement>>(superClass
       //   to the element and use the public facing $fastController to call renderTemplate. This also breaks Typescript.
       //   Sadface.
 
-      // @ts-ignore
+      // @ts-expect-error
       DOM.queueUpdate(() => this.$fastController.element.$fastController.renderTemplate(this.$fastController.template))
     }
 
@@ -50,7 +50,7 @@ export const FASTReactiveMixin = <T extends Constructor<FASTElement>>(superClass
       this.__controllers__?.forEach((c) => c?.hostDisconnected?.())
     }
 
-    attributeChangedCallback (attr: string, oldValue: any, newValue: any) {
+    attributeChangedCallback (attr: string, oldValue: any, newValue: any): void {
       super.attributeChangedCallback(attr, oldValue, newValue)
       this.__controllers__?.forEach((c) => c?.hostUpdated?.())
     }
@@ -63,5 +63,5 @@ export const FASTReactiveMixin = <T extends Constructor<FASTElement>>(superClass
     // }
   }
 
-  return ReactiveClass;
+  return ReactiveClass
 }

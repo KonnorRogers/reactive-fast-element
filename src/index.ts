@@ -1,8 +1,8 @@
-import { FASTElement } from "@microsoft/fast-element"
+import { FASTElement } from '@microsoft/fast-element'
 
-import { FASTReactiveMixin } from "./fast-reactive-mixin"
+import { FASTReactiveMixin } from './fast-reactive-mixin'
 
-export type { ReactiveControllerHost, ReactiveController } from "./types"
+export type { ReactiveControllerHost, ReactiveController } from './types'
 
 export { FASTReactiveMixin }
 
@@ -14,4 +14,3 @@ export { FASTReactiveMixin }
  *     class MyCounter extends ReactiveFASTElement {}
  */
 export class ReactiveFASTElement extends FASTReactiveMixin(FASTElement) {}
-

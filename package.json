@@ -18,9 +18,9 @@
     "clean": "rm -rf dist/",
     "lint": "ts-standard src/ test/ ",
     "fix": "ts-standard src/ test/ --fix",
-    "test": "pnpm run fix && tsc -p tsconfig.json && web-test-runner",
+    "test": "pnpm run fix && web-test-runner",
     "test:watch": "web-test-runner --watch",
-    "start": "tsc -p tsconfig.json && web-dev-server",
+    "start": "web-dev-server",
     "start:watch": "web-dev-server --watch",
     "build": "pnpm run clean && rollup -c",
     "build:watch": "pnpm run clean && rollup -wc",
@@ -33,7 +33,8 @@
     "push": "git push --follow-tags origin main && pnpm run publish"
   },
   "dependencies": {
-    "@microsoft/fast-element": "^1.6.2"
+    "@microsoft/fast-element": "^1.6.2",
+    "rollup": "^2.60.2"
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
@@ -60,8 +61,7 @@
   "ts-standard": {
     "ignore": [
       "dist"
-    ],
-    "project": "./tsconfig-dev.json"
+    ]
   },
   "customElements": "custom-elements.json"
 }

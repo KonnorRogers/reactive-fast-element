@@ -1,24 +1,24 @@
-import {ReactiveControllerHost} from '../../';
+import { ReactiveControllerHost } from '../../'
 
 export class MouseController {
-  host: ReactiveControllerHost;
-  pos = {x: 0, y: 0};
+  host: ReactiveControllerHost
+  pos = { x: 0, y: 0 }
 
-  _onMouseMove = ({clientX, clientY}: MouseEvent) => {
-    this.pos = {x: clientX, y: clientY};
-    this.host.requestUpdate();
-  };
-
-  constructor(host: ReactiveControllerHost) {
-    this.host = host;
-    host.addController(this);
+  _onMouseMove = ({ clientX, clientY }: MouseEvent) => {
+    this.pos = { x: clientX, y: clientY }
+    this.host.requestUpdate()
   }
 
-  hostConnected() {
-    window.addEventListener('mousemove', this._onMouseMove);
+  constructor (host: ReactiveControllerHost) {
+    this.host = host
+    host.addController(this)
   }
 
-  hostDisconnected() {
-    window.removeEventListener('mousemove', this._onMouseMove);
+  hostConnected () {
+    window.addEventListener('mousemove', this._onMouseMove)
+  }
+
+  hostDisconnected () {
+    window.removeEventListener('mousemove', this._onMouseMove)
   }
 }

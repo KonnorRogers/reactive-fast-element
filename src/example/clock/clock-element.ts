@@ -1,10 +1,10 @@
-import {html, customElement} from '@microsoft/fast-element';
-import {ClockController} from './clock-controller';
-import {ReactiveFASTElement, ReactiveControllerHost} from "../../";
+import { html, customElement } from '@microsoft/fast-element'
+import { ClockController } from './clock-controller'
+import { ReactiveFASTElement } from '../../'
 
 const timeFormat = new Intl.DateTimeFormat('en-US', {
-  hour: 'numeric', minute: 'numeric', second: 'numeric',
-});
+  hour: 'numeric', minute: 'numeric', second: 'numeric'
+})
 
 const template = html<ClockElement>`
   <div>Current Time: ${x => x.formattedTime()}</div>
@@ -12,19 +12,19 @@ const template = html<ClockElement>`
 
 @customElement({
   name: 'clock-element',
-  template,
+  template
 })
-export class ClockElement extends ReactiveFASTElement implements ReactiveControllerHost {
-  private clock: ClockController
+export class ClockElement extends ReactiveFASTElement {
+  private readonly clock: ClockController
 
   constructor () {
     super()
 
     // Create the controller and store it
-    this.clock = new ClockController(this, 100);
+    this.clock = new ClockController(this, 100)
   }
 
-  formattedTime () {
+  formattedTime (): string {
     return timeFormat.format(this.clock.value)
   }
 }

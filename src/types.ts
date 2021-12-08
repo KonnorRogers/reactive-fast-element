@@ -1,16 +1,16 @@
-export type Constructor<T = {}> = new (...args: any[]) => T;
+export type Constructor<T = {}> = new (...args: any[]) => T
 
 export interface ReactiveController {
   host?: ReactiveControllerHost
-  hostConnected?(): void
-  hostDisconnected?(): void
-  hostUpdate?(): void
-  hostUpdated?(): void
+  hostConnected?: () => void
+  hostDisconnected?: () => void
+  hostUpdate?: () => void
+  hostUpdated?: () => void
 }
 
 export interface ReactiveControllerHost {
-  addController(controller: ReactiveController): void
-  removeController(controller: ReactiveController): void
-  requestUpdate(): void
-  readonly updateComplete: Promise<boolean>;
+  addController: (controller: ReactiveController) => void
+  removeController: (controller: ReactiveController) => void
+  requestUpdate: () => void
+  readonly updateComplete: Promise<boolean>
 }

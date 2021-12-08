@@ -11,14 +11,14 @@ export default [
     input: "src/index.ts",
     output: [
       {
-        name: "FASTElementReactiveController",
-        file: "dist/fast-element-reactive-controller.umd.js",
+        name: "ReactiveFASTElement",
+        file: "dist/reactive-fast-element.umd.js",
         format: "umd",
         sourcemap: true,
         exports: "named",
       },
       {
-        file: "dist/fast-element-reactive-controller.module.js",
+        file: "dist/reactive-fast-element.module.js",
         format: "es",
         sourcemap: true,
       }
@@ -31,14 +31,14 @@ export default [
     input: "src/index.ts",
     output: [
       {
-        name: "FASTElementReactiveController",
-        file: "dist/fast-element-reactive-controller.umd.min.js",
+        name: "ReactiveFASTElement",
+        file: "dist/reactive-fast-element.umd.min.js",
         format: "umd",
         sourcemap: true,
         exports: "named"
       },
       {
-        file: "dist/fast-element-reactive-controller.module.min.js",
+        file: "dist/reactive-fast-element.module.min.js",
         format: "es",
         sourcemap: true,
       }
@@ -47,14 +47,14 @@ export default [
   },
 ]
 
-function basePlugins(tsconfig = "tsconfig.json") {
+function basePlugins(tsconfig = "./tsconfig.json") {
   return [
     resolve(),
     typescript({ tsconfig }),
   ]
 }
 
-function compressionPlugins(tsconfig = "tsconfig.json") {
+function compressionPlugins(tsconfig = "./tsconfig.json") {
   return [
     ...basePlugins(tsconfig),
     terser({
