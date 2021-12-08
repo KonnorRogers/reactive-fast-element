@@ -7,24 +7,31 @@ const timeFormat = new Intl.DateTimeFormat('en-US', {
 });
 
 const template = html<ClockElement>`
-  <div>Current Time: ${x => x.formattedTime()}</div>
+  <div>Clock 1: ${x => x.timeOne()}</div>
+  <div>Clock 2: ${x => x.timeTwo()}</div>
 `
 
 @customElement({
-  name: 'clock-element',
+  name: 'dual-clock-element',
   template,
 })
 export class ClockElement extends ReactiveFASTElement implements ReactiveControllerHost {
-  private clock: ClockController
+  private clockOne: ClockController
+  private clockTwo: ClockController
 
   constructor () {
     super()
 
     // Create the controller and store it
-    this.clock = new ClockController(this, 100);
+    this.clockOne = new ClockController(this, 100);
+    this.clockTwo = new ClockController(this, 100);
   }
 
-  formattedTime () {
-    return timeFormat.format(this.clock.value)
+  timeOne (): string {
+    return timeFormat.format(this.clockOne.value)
+  }
+
+  timeTwo (): string {
+    return timeFormat.format(this.clockTwo.value)
   }
 }
