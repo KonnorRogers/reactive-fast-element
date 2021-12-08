@@ -24,7 +24,6 @@ way is to use the provided base class.
 import { customElement } from "@microsoft/fast-element"
 import { ReactiveFASTElement } from "reactive-fast-element"
 
-
 @customElement({
   name: "my-element"
 })
@@ -41,7 +40,6 @@ for you to use if you dont want to use the base class.
 import { FASTElement, customElement } from "@microsoft/fast-element"
 import { FASTReactiveMixin } from "reactive-fast-element"
 
-
 @customElement({
   name: "my-element"
 })
@@ -51,7 +49,7 @@ class MyElement extends FASTReactiveMixin(FASTElement) {}
 ## Examples
 
 For some examples of using `reactive-fast-element`,
-checkout the [/examples directory](/examples)
+checkout the [/src/examples directory](/src/examples)
 
 ## Local Development
 
