@@ -6,6 +6,7 @@ specifiers:
   '@open-wc/testing': ^3.0.3
   '@rollup/plugin-node-resolve': ^13.0.6
   '@rollup/plugin-typescript': ^8.3.0
+  '@shoelace-style/localize': ^2.1.3
   '@types/sinon': ^10.0.6
   '@types/sinon-chai': ^3.2.6
   '@typescript-eslint/parser': ^4.0.0
@@ -35,6 +36,7 @@ devDependencies:
   '@open-wc/testing': 3.0.3
   '@rollup/plugin-node-resolve': 13.0.6_rollup@2.60.2
   '@rollup/plugin-typescript': 8.3.0_18a0752cde62d279b7b7d6becd2b2067
+  '@shoelace-style/localize': 2.1.3
   '@types/sinon': 10.0.6
   '@types/sinon-chai': 3.2.6
   '@web/dev-server': 0.1.28
@@ -273,6 +275,10 @@ packages:
       estree-walker: 1.0.1
       picomatch: 2.3.0
       rollup: 2.60.2
+    dev: true
+
+  /@shoelace-style/localize/2.1.3:
+    resolution: {integrity: sha512-AY3uF1Dzg3sBK4nKxvZ2KAjsdFxhLfHVWUpXXjIPaR+rPp8fxBWoNVvnLiROOV/cLg/zdLcU+Nn/xJdqcbEuDw==}
     dev: true
 
   /@sinonjs/commons/1.8.3:
