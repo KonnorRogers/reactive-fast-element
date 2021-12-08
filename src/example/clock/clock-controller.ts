@@ -1,14 +1,13 @@
-import {FASTReactiveControllerHost, FASTReactiveControllerHostInterface, ReactiveFASTElement} from '../../src';
-import type { ReactiveController } from '../../src'
+import type { ReactiveControllerHost, ReactiveController } from '../../'
 
 export class ClockController implements ReactiveController {
-  host: ReactiveFASTElement;
+  host: ReactiveControllerHost;
 
   value = new Date();
   timeout: number;
   private _timerID?: number;
 
-  constructor(host: ReactiveFASTElement, timeout = 1000) {
+  constructor(host: ReactiveControllerHost, timeout = 1000) {
     (this.host = host).addController(this);
     this.timeout = timeout;
   }
