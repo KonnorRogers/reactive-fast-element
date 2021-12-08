@@ -1,37 +1,74 @@
 # Purpose
 
-A reusable template for getting started with Microsoft's FAST Element
-web component library.
+To align with the Lit development teams proposal for
+ReactiveController and ReactiveControllerHosts.
 
-## What's included?
+<https://lit.dev/docs/composition/controllers/>
 
-- Typescript setup
-- Web-dev-server
-- Web-test-runner
-- Initial structure
-- Example counter component with tests.
-- Changelog generation with `standard-changelog`
-- Linting with `ts-standard`
-- [Custom Elements manifest generation](https://custom-elements-manifest.open-wc.org/analyzer/getting-started/)
-
-## Getting started
-
-Click the `clone from template` button on Github.
-
-Then, in your new repo do the following:
+## Installation
 
 ```bash
-npm install
-npm run start
+npm install reactive-fast-element
+
+# OR
+
+yarn add reactive-fast-element
 ```
 
-Navigate to `localhost:8000` and find the magic of the counter
-component.
+## Getting Started
 
-## Moving forward
+To get started with `reactive-fast-element`, the easiest
+way is to use the provided base class.
 
-Check out the `package.json` for all possible scripts.
+```js
+import { customElement } from "@microsoft/fast-element"
+import { ReactiveFASTElement } from "reactive-fast-element"
 
-## But what about yarn?!
 
-If you want yarn, then fork this and use yarn 🤷
+@customElement({
+  name: "my-element"
+})
+class MyElement extends ReactiveFASTElement {}
+```
+
+This allows you to then attach `ReactiveControllers` for
+use by your element.
+
+Alternatively, `reactive-fast-element` ships a base mixin
+for you to use if you dont want to use the base class.
+
+```js
+import { FASTElement, customElement } from "@microsoft/fast-element"
+import { FASTReactiveMixin } from "reactive-fast-element"
+
+
+@customElement({
+  name: "my-element"
+})
+class MyElement extends FASTReactiveMixin(FASTElement) {}
+```
+
+## Examples
+
+For some examples of using `reactive-fast-element`,
+checkout the [/examples directory](/examples)
+
+## Local Development
+
+```bash
+git clone https://github.com/ParamagicDev/reactive-fast-element
+cd reactive-fast-element
+pnpm install
+```
+
+### Start a Dev Server
+
+```bash
+pnpm start
+```
+
+### Testing
+
+```bash
+pnpm test
+```
