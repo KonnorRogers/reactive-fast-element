@@ -20,6 +20,7 @@
     "lint": "ts-standard src/ ",
     "fix": "ts-standard src/ --fix",
     "test": "pnpm run fix && web-test-runner",
+    "test:ci": "pnpm run fix && pnpm run build && web-test-runner",
     "test:watch": "web-test-runner --watch",
     "start": "web-dev-server",
     "start:watch": "web-dev-server --watch",
