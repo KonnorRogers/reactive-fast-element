@@ -1,6 +1,6 @@
 {
   "name": "reactive-fast-element",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "source": "src/index.ts",
   "main": "./dist/reactive-fast-element.js",
   "module": "./dist/reactive-fast-element.module.js",
@@ -27,11 +27,11 @@
     "build": "pnpm run clean && rollup -c",
     "build:watch": "pnpm run clean && rollup -wc",
     "changelog": "standard-changelog",
-    "deploy": "standard-version",
-    "deploy:beta": "pnpm run deploy --prerelease beta && pnpm run push",
-    "deploy:patch": "pnpm run deploy --release-as patch && pnpm run push",
-    "deploy:minor": "pnpm run deploy --release-as minor && pnpm run push",
-    "deploy:major": "pnpm run deploy --release-as major && pnpm run push",
+    "deploy": "pnpm run build && standard-version",
+    "deploy:beta": "pnpm run build && standard-version --prerelease beta && pnpm run push",
+    "deploy:patch": "pnpm run build && standard-version --release-as patch && pnpm run push",
+    "deploy:minor": "pnpm run build && standard-version --release-as minor && pnpm run push",
+    "deploy:major": "pnpm run build && standard-version --release-as major && pnpm run push",
     "push": "git push --follow-tags origin main && pnpm publish"
   },
   "dependencies": {
