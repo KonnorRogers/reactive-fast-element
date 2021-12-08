@@ -1,6 +1,6 @@
 {
   "name": "reactive-fast-element",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "source": "src/index.ts",
   "main": "./dist/reactive-fast-element.js",
   "module": "./dist/reactive-fast-element.module.js",
