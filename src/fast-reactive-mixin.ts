@@ -28,10 +28,15 @@ export const FASTReactiveMixin = <T extends Constructor<FASTElement>>(superClass
     }
 
     requestUpdate (): void {
-      DOM.queueUpdate(() => {})
+      // Due to this.$fastController.renderTemplate being private, we have to skirt around and grab a reference
+      //   to the element and use the public facing $fastController to call renderTemplate. This also breaks Typescript.
+      //   Sadface.
+
+      // @ts-ignore
+      DOM.queueUpdate(() => this.$fastController.element.$fastController.renderTemplate(this.$fastController.template))
     }
 
-    updateComplete (): Promise<boolean> {
+    get updateComplete (): Promise<boolean> {
       return DOM.nextUpdate().then(() => true)
     }
 

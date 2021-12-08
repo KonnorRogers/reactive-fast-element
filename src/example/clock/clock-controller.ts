@@ -2,15 +2,16 @@ import type { ReactiveControllerHost, ReactiveController } from '../../'
 
 export class ClockController implements ReactiveController {
   host: ReactiveControllerHost;
-
-  value = new Date();
+  value: Date;
   timeout: number;
   private _timerID?: number;
 
   constructor(host: ReactiveControllerHost, timeout = 1000) {
     (this.host = host).addController(this);
     this.timeout = timeout;
+    this.value = new Date();
   }
+
   hostConnected() {
     // Start a timer when the host is connected
     this._timerID = window.setInterval(() => {
